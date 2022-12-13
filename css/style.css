@@ -1,0 +1,21 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+/* webkit solution */
+::-webkit-input-placeholder { text-align:right; }
+/* mozilla solution */
+input:-moz-placeholder { text-align:right; }
+
+.label {
+    white-space: nowrap;
+}
+.footer-link {
+    text-align: center;
+    
+}
+.footer-link-add {
+    color: #48c78e;
+    font-size: 1.3rem;
+    margin: 12px;
+}
+.footer-link-add:hover {
+    color: #485fc7;
+}
