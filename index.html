@@ -1,114 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tính điểm HP CTU</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tính điểm HP CTU</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
-  <section class="section">
-    <h1 class="title has-text-centered"> Tính điểm trung bình học kì CTU</h1>
-        <div class="columns">
-            <div class="column">
-                <div class="row-hp columns is-mobile">
-                    <div class="column is-7">
-                        <label class="label">Điểm HP:</label>
-                        <input required class="input diemHP is-primary" type="number" name="" id="diemHP1" min="0" max="10">
-    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+
+
+
+    <meta property="og:image" content="https://vitris128.github.io/TinhDiemHPCTU/img/bangQuyDoi.png" />
+    <meta property="og:description" content="Đây là một công cụ tính điểm trung bình học kì, KHÔNG phải là trang web chính thức của trường Đại Học Cần Thơ." />
+    <meta property="og:url"content="https://vitris128.github.io/TinhDiemHPCTU/" />
+    <meta property="og:title" content="Tính điểm trung bình học kì CTU" />
+    </head>
+    <body>
+        <section class="section">
+            <h1 class="title has-text-centered"> Tính điểm trung bình học kì CTU</h1>
+                <div class="columns">
+                    <div class="column">
+                        <div class="row-hp columns is-mobile">
+                            <div class="column is-7">
+                                <label class="label">Điểm HP:</label>
+                                <input required class="input diemHP is-primary" type="number" name="" id="diemHP1" min="0" max="10">
+            
+                            </div>
+                            <div class="column is-4">
+                                <label class="label">Số tín chỉ HP:</label>
+                                <input required class="input soTC is-primary" type="number" name="" id="soTC1" min="0" max="4">
+            
+                            </div>
+                        </div>
+                        <div class="row-hp columns is-mobile">
+                            <div class="column is-7">
+                                <label class="label">Điểm HP:</label>
+                                <input required class="input diemHP is-primary" type="number" name="" id="diemHP2" min="0" max="10">
+            
+                            </div>
+                            <div class="column is-4">
+                                <label class="label">Số tín chỉ HP:</label>
+                                <input required class="input soTC is-primary" type="number" name="" id="soTC2" min="0" max="4">
+            
+                            </div>
+                        </div>
+                        <div class="row-hp columns is-mobile">
+                            <div class="column is-7">
+                                <label class="label">Điểm HP:</label>
+                                <input required class="input diemHP is-primary" type="number" name="" id="diemHP3" min="0" max="10">
+            
+                            </div>
+                            <div class="column is-4">
+                                <label class="label">Số tín chỉ HP:</label>
+                                <input required class="input soTC is-primary" type="number" name="" id="soTC3" min="0" max="4">
+            
+                            </div>
+                        </div>
+                        <div class="block"></div>
                     </div>
-                    <div class="column is-4">
-                        <label class="label">Số tín chỉ HP:</label>
-                        <input required class="input soTC is-primary" type="number" name="" id="soTC1" min="0" max="4">
-    
+            
+                    <div class="column">
+                        <img src="./img/bangQuyDoi.png" alt="" class="img">
                     </div>
                 </div>
-                <div class="row-hp columns is-mobile">
-                    <div class="column is-7">
-                        <label class="label">Điểm HP:</label>
-                        <input required class="input diemHP is-primary" type="number" name="" id="diemHP2" min="0" max="10">
-    
+                <div class="columns">
+                    <div class="column">
+                        <div class="columns is-mobile">
+                            <div class="column is-7">
+                                <button onclick="CreateNewRow()" class=" button m-2 is-medium is-link">Thêm học phần</button>
+                                <button onclick="RemoveLastRow()" class="button m-2 is-medium is-link">Xoá học phần cuối</button>
+                            </div>
+                            <div class="column is-3">
+                                <button type="submit" onclick="ShowCalculate()" id="calcBtn" class="button m-2 is-medium is-success">Tính</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="column is-4">
-                        <label class="label">Số tín chỉ HP:</label>
-                        <input required class="input soTC is-primary" type="number" name="" id="soTC2" min="0" max="4">
-    
+
+                <div class="column">
+                    <div class="box">
+                        Đây là một công cụ tính điểm trung bình học kì, <strong>KHÔNG</strong> phải là trang web chính thức của trường Đại Học Cần Thơ.
+                        Mọi thắc mắc hoặc góp ý, vui lòng gửi về các địa chỉ sau:
+                        <br>
+                        <div class="column footer-link">
+                                <a href="https://github.com/Vitris128" class="footer-link-add">
+                                    Github 
+                                        <i class=" fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://www.facebook.com/n.trong128" class="footer-link-add">
+                                    Facebook 
+                                        <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="mailto:lenhattrong128@gmail.com" class="footer-link-add">
+                                    Email 
+                                    <i class="fa-solid fa-envelope"></i>
+                                    
+                                </a>
+                        </div>
                     </div>
+
                 </div>
-                <div class="row-hp columns is-mobile">
-                    <div class="column is-7">
-                        <label class="label">Điểm HP:</label>
-                        <input required class="input diemHP is-primary" type="number" name="" id="diemHP3" min="0" max="10">
-    
-                    </div>
-                    <div class="column is-4">
-                        <label class="label">Số tín chỉ HP:</label>
-                        <input required class="input soTC is-primary" type="number" name="" id="soTC3" min="0" max="4">
-    
-                    </div>
-                </div>
-                <div class="block"></div>
             </div>
-    
-            <div class="column">
-                <img src="./img/bangQuyDoi.png" alt="" class="img">
+        </section>
+        <div id="modal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Kết quả</p>
+                <button id="closeModalBtn1" class="delete" aria-label="close"></button>
+            </header>
+            <section id="modal-content" class="modal-card-body">
+                
+            </section>
+            <footer class="modal-card-foot">
+                <button id="closeModalBtn2" class="button" aria-label="close">Close</button>
+            </footer>
             </div>
         </div>
-        <div class="columns">
-            <div class="column">
-                <div class="columns is-mobile">
-                    <div class="column is-7">
-                        <button onclick="CreateNewRow()" class=" button m-2 is-medium is-link">Thêm học phần</button>
-                        <button onclick="RemoveLastRow()" class="button m-2 is-medium is-link">Xoá học phần cuối</button>
-                    </div>
-                    <div class="column is-3">
-                        <button type="submit" onclick="ShowCalculate()" id="calcBtn" class="button m-2 is-medium is-success">Tính</button>
-                    </div>
-                </div>
-            </div>
-
-        <div class="column">
-            <div class="box">
-                Đây là một công cụ tính điểm trung bình học kì, <strong>KHÔNG</strong> phải là trang web chính thức của trường Đại Học Cần Thơ.
-                Mọi thắc mắc hoặc góp ý, vui lòng gửi về các địa chỉ sau:
-                <br>
-                <div class="column footer-link">
-                        <a href="https://github.com/Vitris128" class="footer-link-add">
-                            Github 
-                                <i class=" fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.facebook.com/n.trong128" class="footer-link-add">
-                            Facebook 
-                                <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="mailto:lenhattrong128@gmail.com" class="footer-link-add">
-                            Email 
-                            <i class="fa-solid fa-envelope"></i>
-                            
-                        </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-  </section>
-  <div id="modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Kết quả</p>
-        <button id="closeModalBtn1" class="delete" aria-label="close"></button>
-      </header>
-      <section id="modal-content" class="modal-card-body">
-        
-      </section>
-      <footer class="modal-card-foot">
-        <button id="closeModalBtn2" class="button" aria-label="close">Close</button>
-      </footer>
-    </div>
-  </div>
-  </body>
+    </body>
   <script src="./js/script.js"></script>
-</html>
