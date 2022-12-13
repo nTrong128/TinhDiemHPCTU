@@ -29,19 +29,19 @@ function Calculate() {
     let diemHP =diemHPAll[i].value;
     let soTC = soTCAll[i].value;
     
-    if(soTC< 0 || soTC > 4) return "Số tín chỉ không hợp lệ.";
-    if(diemHP>10) return "Điểm HP không hợp lệ.";
-        if(diemHP>=4) {
-            diemHP=CheckDiem(diemHP);
-            tongDiem+=diemHP*soTC;
-            tongSoTC+= +soTC;
-        } else {
+    if(!diemHP || diemHP>10) return "Điểm HP không hợp lệ.";
+    if(!soTC || soTC< 0 || soTC > 4) return "Số tín chỉ không hợp lệ.";
+    if(diemHP>=4) {
+        diemHP=CheckDiem(diemHP);
+        tongDiem+=diemHP*soTC;
+        tongSoTC+= +soTC;
+    } else {
 
-            tongSoTC+= +soTC;
-        }
+        tongSoTC+= +soTC;
+    }
         
-            console.log(tongDiem);
-            console.log(tongSoTC);
+            // console.log(tongDiem);
+            // console.log(tongSoTC);
     }
     return "Điểm trung bình học kì: " + Number.parseFloat(tongDiem/tongSoTC).toFixed(2);
 }
@@ -62,10 +62,6 @@ function CheckDiem(diemHP) {
     else if(diemHP>=4) return 1;
     else return 0;
 }
-// function CheckSoTC(soTC) {
-//     if(soTC<=0 || soTC >4) return 0;
-//     else return Number(soTC);
-// }
 
 // Modal
 const calcBtn = document.querySelector('#calcBtn');
