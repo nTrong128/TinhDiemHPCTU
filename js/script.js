@@ -1,11 +1,11 @@
-// Số hàng
+// Số hàng ban đầu
 var soHang = 3;
 
 // Thêm hàng
 function CreateNewRow() {
     soHang++;
     $("div").removeClass("last");
-    $( "<div class='row-hp last columns is-mobile'><div class='column is-7'><label class='label'>Điểm HP:</label><input class='input diemHP is-primary' type='number' name='' id='diemHP"+soHang.toString()+"' min='0' max='10'></div><div class='column is-4'><label class='label'>Số tín chỉ HP:</label><input class='input soTC is-primary' type='number' name='' id='soTC"+soHang.toString()+"' min='0' max='4'></div></div>" ).insertBefore( $( ".block" ) );
+    $( "<div class='row-hp last columns is-mobile'><div class='column is-7'><label class='label'>Điểm HP:</label><input placeholder='Nhập điểm HP:' class='input diemHP is-primary' type='number' name='' id='diemHP"+soHang.toString()+"' min='0' max='10'></div><div class='column is-4'><label class='label'>Số tín chỉ HP:</label><input placeholder='Nhập số TC:' class='input soTC is-primary' type='number' name='' id='soTC"+soHang.toString()+"' min='0' max='4'></div></div>" ).insertBefore( $( ".block" ) );
     soHPs = document.querySelectorAll(".row-hp").length;
 }
 
@@ -83,3 +83,37 @@ closeModalBtn2.addEventListener('click', () => {
 modalBg.addEventListener('click', () => {
     modal.classList.remove('is-active');
 })
+
+// Timer
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 22, 2023 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("day-count").innerHTML = days ;
+  document.getElementById("hour-count").innerHTML = hours ;
+  document.getElementById("minute-count").innerHTML = minutes ;
+  document.getElementById("second-count").innerHTML = seconds ;
+//   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+//   + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);

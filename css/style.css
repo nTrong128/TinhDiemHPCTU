@@ -1,8 +1,8 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 /* webkit solution */
-::-webkit-input-placeholder { text-align:right; }
+/* ::-webkit-input-placeholder { text-align:right; } */
 /* mozilla solution */
-input:-moz-placeholder { text-align:right; }
+/* input:-moz-placeholder { text-align:right; } */
 
 .label{
     white-space: nowrap;
@@ -18,4 +18,83 @@ input:-moz-placeholder { text-align:right; }
 }
 .footer-link-add:hover {
     color: #485fc7;
+}
+
+.typed-animation {
+    display: inline-block;
+  }
+  
+  .typed-out {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.25rem solid #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    animation: typing 8s steps(40) infinite, blinking 1s infinite;
+  }
+  
+  @keyframes typing {
+    0%, 100% {
+      width: 0;
+    }
+  
+    50%, 90% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blinking {
+    0%, 100% {
+      border-color: transparent;
+    }
+  
+    50% {
+      border-color: #fff;
+    }
+  }
+  .navbar {
+    border-radius: 10px;
+
+  }
+  .countdown {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #48c78eda;
+    
+    color: white;
+  }
+  
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 20px;
+    width: 25%;
+  }
+  
+  .countdown-number {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .countdown-text {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .countdown-number {
+      font-size: 35px;
+    }
+  }
+.tet-column {
+    background: url(/img/backgroundTet.webp);
+    background-size: contain;
+}
+.tet-header {
+    background-color: rgba(255, 255, 255, 0.8);
 }
