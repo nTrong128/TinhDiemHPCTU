@@ -4,7 +4,7 @@
 /* mozilla solution */
 input:-moz-placeholder { text-align:right; }
 
-.label {
+.label{
     white-space: nowrap;
 }
 .footer-link {
