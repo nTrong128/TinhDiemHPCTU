@@ -96,7 +96,7 @@ html {
     }
   }
 .tet-column {
-    background: url(/img/backgroundTet.png);
+    background: url(../img/backgroundTet.png);
     background-size: contain;
     border-radius: 10px;
 }
