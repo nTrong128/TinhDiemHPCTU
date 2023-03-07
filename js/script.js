@@ -5,7 +5,7 @@ var soHang = 3;
 function CreateNewRow() {
     soHang++;
     $("div").removeClass("last");
-    $( "<div class='row-hp last columns is-mobile'><div class='column is-7'><label class='label'>Điểm HP:</label><input placeholder='Nhập điểm HP:' class='input diemHP is-primary' type='number' name='' id='diemHP"+soHang.toString()+"' min='0' max='10'></div><div class='column is-4'><label class='label'>Số tín chỉ HP:</label><input placeholder='Nhập số TC:' class='input soTC is-primary' type='number' name='' id='soTC"+soHang.toString()+"' min='0' max='4'></div></div>" ).insertBefore( $( ".block" ) );
+    $( "<div class='row-hp last columns is-mobile'><div class='column is-7'><label class='label'>Điểm HP:</label><input placeholder='Nhập điểm HP:' class='input diemHP is-primary' type='text' name='' id='diemHP"+soHang.toString()+"' min='0' max='10'></div><div class='column is-4'><label class='label'>Số tín chỉ HP:</label><input placeholder='Nhập số TC:' class='input soTC is-primary' type='number' name='' id='soTC"+soHang.toString()+"' min='0' max='4'></div></div>" ).insertBefore( $( ".block" ) );
     soHPs = document.querySelectorAll(".row-hp").length;
 }
 
@@ -31,14 +31,9 @@ function Calculate() {
     
     if(!diemHP || diemHP>10) return "Điểm HP không hợp lệ.";
     if(!soTC || soTC< 0 || soTC > 4) return "Số tín chỉ không hợp lệ.";
-    if(diemHP>=4) {
-        diemHP=CheckDiem(diemHP);
-        tongDiem+=diemHP*soTC;
-        tongSoTC+= +soTC;
-    } else {
-
-        tongSoTC+= +soTC;
-    }
+    diemHP=CheckDiem(diemHP);
+    tongDiem+=diemHP*soTC;
+    tongSoTC+= +soTC;
         
             // console.log(tongDiem);
             // console.log(tongSoTC);
@@ -50,16 +45,16 @@ function ShowCalculate() {
     document.getElementById("modal-content").innerHTML =  Calculate();
 }
 
-// Chuyển từ hệ 10 sang hệ 4
+
 function CheckDiem(diemHP) {
-    if(diemHP>10.0) return 0;
-    else if(diemHP>=9) return 4;
-    else if(diemHP>=8) return 3.5;
-    else if(diemHP>=7) return 3;
-    else if(diemHP>=6.5) return 2.5;
-    else if(diemHP>=5.5) return 2;
-    else if(diemHP>=5) return 1.5;
-    else if(diemHP>=4) return 1;
+    if(diemHP=='A') return 4;
+    else if(diemHP=='B+') return 3.5;
+    else if(diemHP=='B') return 3;
+    else if(diemHP=='C+') return 2.5;
+    else if(diemHP=='C') return 2;
+    else if(diemHP=='D+') return 1.5;
+    else if (diemHP == 'D') return 1;
+    else if (diemHP == 'F') return 0;
     else return 0;
 }
 
