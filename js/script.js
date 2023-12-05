@@ -5,7 +5,9 @@ var soHang = 3;
 function CreateNewRow() {
     soHang++;
     $("div").removeClass("last");
-    $( "<div class='row-hp last columns is-mobile'><div class='column is-7'><label class='label'>Điểm HP:</label><input placeholder='Nhập điểm HP:' class='input diemHP is-primary' type='text' name='' id='diemHP"+soHang.toString()+"' min='0' max='10'></div><div class='column is-4'><label class='label'>Số tín chỉ HP:</label><input placeholder='Nhập số TC:' class='input soTC is-primary' type='number' name='' id='soTC"+soHang.toString()+"' min='0' max='4'></div></div>" ).insertBefore( $( ".block" ) );
+  // $("<div class='row-hp last columns is-mobile'><div class='column is-5'><label class='label'>Điểm HP:</label><input placeholder='Nhập điểm HP:' class='input diemHP is-primary' type='text' name='' id='diemHP" + soHang.toString() + "' min='0' max='10'></div><div class='column is-4'><label class='label'>Số tín chỉ HP:</label><input placeholder='Nhập số TC:' class='input soTC is-primary' type='number' name='' id='soTC" + soHang.toString() + "' min='0' max='4'></div></div>").insertBefore($(".block"));
+  
+  $("<div class='row-hp last columns is-mobile'><div class='column is-5'><label class='label'>Điểm HP:</label><select name='' placeholder='Điểm HP' class='input diemHP is-primary' id='diemHP" + soHang.toString() + "'><option value='A'>A</option><option value='B+'>B+</option><option value='B'>B</option><option value='C+'>C+</option><option value='C'>C</option><option value='D+'>D+</option><option value='D'>D</option><option value='F'>F</option></select></div > <div class='column is-4'><label class='label'>Số tín chỉ HP:</label><select name='' id='soTC" + soHang.toString() + "' placeholder='Số TC' class='input soTC is-primary'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option></select></div></div > " ).insertBefore( $( ".block" ) );
     soHPs = document.querySelectorAll(".row-hp").length;
 }
 
@@ -29,7 +31,6 @@ function Calculate() {
     let diemHP =diemHPAll[i].value;
     let soTC = soTCAll[i].value;
     
-    if(!diemHP || diemHP>10) return "Điểm HP không hợp lệ.";
     if(!soTC || soTC< 0 || soTC > 4) return "Số tín chỉ không hợp lệ.";
     diemHP=CheckDiem(diemHP);
     tongDiem+=diemHP*soTC;
