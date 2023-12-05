@@ -91,13 +91,8 @@ html {
   font-size: 16px;
 }
 
-@media screen and (max-width: 767px) {
-  .countdown-number {
-    font-size: 35px;
-  }
-}
 .tet-column {
-  /* min-height: 300px; */
+  margin: 0 80px;
   background: url(../img/backgroundTet.png);
   background-size: contain;
   border-radius: 10px;
@@ -114,4 +109,13 @@ html {
   font-size: 18px;
   outline: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .countdown-number {
+    font-size: 35px;
+  }
+  .tet-column {
+    margin: 0 4px;
+  }
 }

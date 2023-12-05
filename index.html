@@ -29,7 +29,7 @@
       <div class="columns">
         <div class="column">
           <div class="row-hp columns is-mobile">
-            <div class="column is-5">
+            <div class="column is-6">
               <label class="label">Điểm HP:</label>
               <!-- <input placeholder="Nhập điểm HP:" class="input diemHP is-primary" type="text" name="" id="diemHP1" min="0" max="10" /> -->
               <select name="diemHP1" id="diemHP1" placeholder="Điểm HP" class="input diemHP is-primary">
@@ -43,7 +43,7 @@
                 <option value="F">F</option>
               </select>
             </div>
-            <div class="column is-4">
+            <div class="column is-6">
               <label class="label">Số tín chỉ HP:</label>
               <!-- <input placeholder="Nhập số TC:" class="input soTC is-primary" type="number" name="" id="soTC1" min="0" max="4" /> -->
               <select name="soTC1" id="soTC1" placeholder="Số TC" class="input soTC is-primary">
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div class="row-hp columns is-mobile">
-            <div class="column is-5">
+            <div class="column is-6">
               <label class="label">Điểm HP:</label>
               <select name="diemHP2" id="diemHP2" placeholder="Điểm HP" class="input diemHP is-primary">
                 <option value="A">A</option>
@@ -68,7 +68,7 @@
                 <option value="F">F</option>
               </select>
             </div>
-            <div class="column is-4">
+            <div class="column is-6">
               <label class="label">Số tín chỉ HP:</label>
               <!-- <input placeholder="Nhập số TC:" class="input soTC is-primary" type="number" name="" id="soTC2" min="0" max="4" /> -->
               <select name="soTC2" id="soTC2" placeholder="Số TC" class="input soTC is-primary">
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div class="row-hp last columns is-mobile">
-            <div class="column is-5">
+            <div class="column is-6">
               <label class="label">Điểm HP:</label>
               <!-- <input placeholder="Nhập điểm HP:" class="input diemHP is-primary" type="text" name="" id="diemHP3" /> -->
               <select name="diemHP3" id="diemHP3" placeholder="Điểm HP" class="input diemHP is-primary">
@@ -94,7 +94,7 @@
                 <option value="F">F</option>
               </select>
             </div>
-            <div class="column is-4">
+            <div class="column is-6">
               <label class="label">Số tín chỉ HP:</label>
               <!-- <input placeholder="Nhập số TC:" class="input soTC is-primary" type="number" name="" id="soTC3" min="0" max="4" /> -->
               <select name="soTC3" id="soTC3" placeholder="Số TC" class="input soTC is-primary">
@@ -107,12 +107,12 @@
           </div>
           <div class="block">
             <div class="column is-mobile">
-              <button onclick="ShowCalculate()" id="calcBtn" class="button m-2 is-medium is-success">Tính</button>
-              <button style="width: 206px" onclick="CreateNewRow()" class="button m-2 is-medium is-link">Thêm học phần</button>
-              <button onclick="RemoveLastRow()" class="button m-2 is-medium is-link">Xoá học phần cuối</button>
+              <button onclick="ShowCalculate()" id="calcBtn" class="button m-2 is-medium is-primary">Tính</button>
+              <button onclick="CreateNewRow()" class="button m-2 is-medium is-link"><i class="fa-solid fa-plus"></i></button>
+              <button onclick="RemoveLastRow()" class="button m-2 is-medium is-danger"><i class="fa-solid fa-xmark"></i></button>
+              <h1 class="subtitle has-text-weight-bold">Chú ý: điểm HP là điểm chữ.</h1>
             </div>
           </div>
-          <h1 class="subtitle has-text-weight-bold">***Chú ý: điểm nhập vào là điểm chữ.</h1>
         </div>
         <div class="column">
           <div class="column">
