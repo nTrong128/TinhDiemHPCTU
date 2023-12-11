@@ -28,8 +28,14 @@
 
       <div class="columns">
         <div class="column">
+          <p class="content"><i>Tên học phần học có thể bỏ trống</i></p>
           <div class="row-hp columns is-mobile">
-            <div class="column is-6">
+            <div class="column is-5">
+              <label class="label">Tên học phần:</label>
+              <input type="text" name="" id="" class="input diemHP is-primary" placeholder="Nhập tên môn học">
+            </div>
+            <div class="column is-3">
+              
               <label class="label">Điểm HP:</label>
               <!-- <input placeholder="Nhập điểm HP:" class="input diemHP is-primary" type="text" name="" id="diemHP1" min="0" max="10" /> -->
               <select name="diemHP1" id="diemHP1" placeholder="Điểm HP" class="input diemHP is-primary">
@@ -43,7 +49,7 @@
                 <option value="F">F</option>
               </select>
             </div>
-            <div class="column is-6">
+            <div class="column is-3">
               <label class="label">Số tín chỉ HP:</label>
               <!-- <input placeholder="Nhập số TC:" class="input soTC is-primary" type="number" name="" id="soTC1" min="0" max="4" /> -->
               <select name="soTC1" id="soTC1" placeholder="Số TC" class="input soTC is-primary">
@@ -55,7 +61,11 @@
             </div>
           </div>
           <div class="row-hp columns is-mobile">
-            <div class="column is-6">
+            <div class="column is-5">
+              <label class="label">Tên học phần:</label>
+              <input type="text" name="" id="" class="input diemHP is-primary" placeholder="Nhập tên môn học">
+            </div>
+            <div class="column is-3">
               <label class="label">Điểm HP:</label>
               <select name="diemHP2" id="diemHP2" placeholder="Điểm HP" class="input diemHP is-primary">
                 <option value="A">A</option>
@@ -68,7 +78,7 @@
                 <option value="F">F</option>
               </select>
             </div>
-            <div class="column is-6">
+            <div class="column is-3">
               <label class="label">Số tín chỉ HP:</label>
               <!-- <input placeholder="Nhập số TC:" class="input soTC is-primary" type="number" name="" id="soTC2" min="0" max="4" /> -->
               <select name="soTC2" id="soTC2" placeholder="Số TC" class="input soTC is-primary">
@@ -80,7 +90,11 @@
             </div>
           </div>
           <div class="row-hp last columns is-mobile">
-            <div class="column is-6">
+            <div class="column is-5">
+              <label class="label">Tên học phần:</label>
+              <input type="text" name="" id="" class="input diemHP is-primary" placeholder="Nhập tên môn học">
+            </div>
+            <div class="column is-3">
               <label class="label">Điểm HP:</label>
               <!-- <input placeholder="Nhập điểm HP:" class="input diemHP is-primary" type="text" name="" id="diemHP3" /> -->
               <select name="diemHP3" id="diemHP3" placeholder="Điểm HP" class="input diemHP is-primary">
@@ -94,7 +108,7 @@
                 <option value="F">F</option>
               </select>
             </div>
-            <div class="column is-6">
+            <div class="column is-3">
               <label class="label">Số tín chỉ HP:</label>
               <!-- <input placeholder="Nhập số TC:" class="input soTC is-primary" type="number" name="" id="soTC3" min="0" max="4" /> -->
               <select name="soTC3" id="soTC3" placeholder="Số TC" class="input soTC is-primary">
@@ -106,12 +120,12 @@
             </div>
           </div>
           <div class="block">
-            <div class="column is-mobile">
-              <button onclick="ShowCalculate()" id="calcBtn" class="button m-2 is-medium is-primary">Tính</button>
-              <button onclick="CreateNewRow()" class="button m-2 is-medium is-link"><i class="fa-solid fa-plus"></i></button>
-              <button onclick="RemoveLastRow()" class="button m-2 is-medium is-danger"><i class="fa-solid fa-xmark"></i></button>
-              <h1 class="subtitle has-text-weight-bold">Chú ý: điểm HP là điểm chữ.</h1>
+            <div class="column is-mobile is-flex is-justify-content-center">
+              <button onclick="ShowCalculate()" id="calcBtn" class="button mx-5 m-2 is-medium is-primary">Tính</button>
+              <button onclick="CreateNewRow()" class="button m-2 mx-5 is-medium is-link"><i class="fa-solid fa-plus"></i></button>
+              <button onclick="RemoveLastRow()" class="button m-2 mx-5 is-medium is-danger"><i class="fa-solid fa-xmark"></i></button>
             </div>
+              <h1 class="subtitle has-text-weight-bold">Chú ý: điểm HP là điểm chữ.</h1>
           </div>
         </div>
         <div class="column">
@@ -144,24 +158,18 @@
           <strong>KHÔNG</strong> phải là trang web chính thức của <i>trường Đại Học Cần Thơ</i>. Mọi thắc mắc hoặc góp ý, vui lòng gửi về các địa chỉ sau:
         </p>
         <div class="column footer-link">
-          <a href="https://github.com/nTrong128" class="footer-link-add">
-            Github
-            <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/nTrong128" class="footer-link-add">Github <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.facebook.com/n.trong128" class="footer-link-add">
-            Facebook
-            <i class="fa-brands fa-facebook"></i>
+          <a href="https://www.facebook.com/n.trong128" class="footer-link-add">Facebook <i class="fa-brands fa-facebook"></i>
           </a>
-          <a href="mailto:lenhattrong128@gmail.com" class="footer-link-add">
-            Email
-            <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:lenhattrong128@gmail.com" class="footer-link-add">Email <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
       </div>
     </footer>
     <div id="modal" class="modal">
       <div class="modal-background"></div>
-      <div class="modal-card">
+      <div class="modal-card mx-5">
         <header class="modal-card-head">
           <p class="modal-card-title">Kết quả</p>
           <button id="closeModalBtn1" class="delete" aria-label="close"></button>
