@@ -79,7 +79,7 @@ modalBg.addEventListener('click', () => {
 })
 
 // Timer
-var countDownDate = new Date("Feb 10, 2024 00:00:00").getTime();
+var countDownDate = new Date("Jan 29, 2025 00:00:00").getTime();
 var x = setInterval(function() {
 
   var now = new Date().getTime();
